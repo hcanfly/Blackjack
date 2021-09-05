@@ -5,7 +5,7 @@ Blackjack is an iOS app written in Swift that implements a basic game of blackja
 
 
 
-<img src="Screenshot.png" style="margin-right: 60px;"><img src="Screenshot.gif" style="margin-right: 60px;">
+<img src="Screenshot.png" style="margin-right: 60px;"><img src="Screenshot.gif" style="margin-left: 60px;">
 
 
 ## License
