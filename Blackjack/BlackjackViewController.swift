@@ -129,7 +129,7 @@ extension BlackjackViewController: GameStateDelegate {
         
         switch result {
         case .dealer21:
-            message = "Dealer won (21)"
+            message = "Dealer won"
         case .dealerBust:
             message = "Won"
         case .playerBust:
