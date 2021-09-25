@@ -12,7 +12,6 @@ class GameView: UIView, GameDelegate {
     private var game = Game.sharedInstance
     
     private let cardOffset: CGFloat = 20.0
-    
     private var dealerLocation = CGPoint(x: 154, y: 240)
     private var playerLocation = CGPoint(x: 154, y: 440)
     private var shoeLocation = CGPoint.zero
@@ -39,7 +38,7 @@ class GameView: UIView, GameDelegate {
     func newHand() {
         resetLocations()
 
-        let _ = self.subviews.filter({ $0 is CardView }).map({ $0.removeFromSuperview() })
+        _ = self.subviews.filter({ $0 is CardView }).map({ $0.removeFromSuperview() })
     }
     
     func dealCardToPlayer(card: CardView) {
@@ -53,7 +52,9 @@ class GameView: UIView, GameDelegate {
     }
     
     func markAllCardsVisible() {
-        let _ = self.subviews.filter({ $0 is CardView }).map({ ($0 as! CardView).faceUp = true })
+        // swiftlint:disable force_cast
+        _ = self.subviews.map({ ($0 as! CardView).faceUp = true })
+        // swiftlint:enable force_cast
     }
     
     private func animateDeal(card: CardView, fromLocation: CGPoint, toLocation: CGPoint) {
